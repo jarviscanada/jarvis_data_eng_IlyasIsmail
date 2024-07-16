@@ -1,0 +1,88 @@
+# Preferred name (Characters only)
+name: "Ilyas Ismail"
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_IlyasIsmail
+
+# Introduce yourself, your academic and professional background.
+# What excites you about the software industry and your passion. At least 80 words
+summary: I am an efficient, focused, and goal-oriented developer who is comfortable working in a group or an individual environment. Always giving my best and through hard work, I'm a recent graduate from Centennial College with an Advanced Diploma in Software Engineering Technology. I'm a skilled Java and web developer with experience in creating many standalone applications that utilized either a NoSQL or SQL database, and I've built APIs used across multiple applications and platforms. Regarding software development, I enjoy finding new and better ways to upgrade and implement features, and to see how technology improves over time. To summarize, I'm looking to put my experience and skills to good use in the software development industry.
+
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+skills:
+  # At least 5 skills
+  proficient:
+    - Java
+    - JavaScript
+    - NoSQL
+    - RDBMS/SQL
+    - React
+    - Amazon Web Services
+    - Linux/Bash
+    - Agile/Scrum
+    - Git
+  # At least 5 skills
+  competent:
+    - C#
+    - ASP.NET
+    - Python
+    - Jira
+    - Azure Data Lake
+  # At least 5 skills
+  familiar:
+    - Angular
+    - Apigee
+    - Google Cloud Platform
+    - Jenkins
+    - PHP
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "/linux_sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Implemented scripts and a database to track and store system specifications and resource usage to assist system administrators with maintaining system performance and faulty hardware. A PostgreSQL Docker container was created to host the database. Bash was used to retrieve the information needed through commands such as vmstat, date, and lscpu. Testing was completed manually, running the script on a single machine and debugging as necessary. Regarding deployment, the database was deployed through a PostgreSQL Docker container, the automation was set using a crontab task, and the code was deployed to a cloud repository using Git and GitHub.
+
+# List of personal or academic projects
+# Feel free to add more projects
+highlighted_projects:
+    #project name
+  - name: "Library Web and Mobile App"
+    #URL is optional
+    git_url: "https://github.com/jamwalab/mylibraryapp/tree/main"
+    # The project description must start with an action verb (tps://bit.ly/3guO98u)
+    description: Collaborated with a team of four to develop a cloud-hosted web application and an accompanying mobile application over four months. We implemented the app using the MERN stack alongside libraries such as Axios, JWT, and bcrypt for connection requests and authentication, Bootstrap for better front-end visualization, and Nodemailer to send e-mails. We hosted the web app online and had the mobile app make requests directly to and from the web app's API. Testing was done through manual testing of each feature. The applications were deployed through Heroku and Google's Firebase.
+  - name: "Restaurant Web App"
+    git_url: "https://github.com/COMP231Team/GrabATable"
+    description: Developed a web app, alongside nine team members, for restaurant owners to list their establishments on our site and for customers to book seats at the restaurant with confirmation. Implementation was done with MongoDB as the database, Node.js and Express.js as the back-end, EJS and Bootstrap for front-end visualization, bcrypt for encryption, Nodemailer to send verification e-mails, and Chai for unit testing. Testing was performed manually at times and through utilizing Chai towards the end of development. Deployment was done through Heroku, where the web application was hosted online.
+
+
+#List of professional experience
+#The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
+professional_experience:
+  #Write your Jarvis role as a professional experience rather than training.
+  - title: "Software Developer"
+    company: "Jarvis"
+    duration: "2024-present"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Coded and implemented numerous projects that utilized different languages and frameworks, such as Java and BASH. Provided each project with detailed documentation. Attended daily scrum meetings and hosted presentations for colleagues."
+
+#List of edcuation
+education: 
+  - school_name: "Centennial College"
+    duration: "2020-2024"
+    degree: "Advanced Diploma in Software Engineering Technology"
+    department: "Engineering Technology and Applied Science"
+    # optional
+    awards_achievements: 
+      - "Graduated with Honours"
+
+#Optional section
+others:
+    #category
+  - title: "Activities/Hobbies"
+    bullets:
+      - "Sports enjoyer, I played for various school teams and local leagues for sports such as basketball, soccer, track and field, and volleyball."
+      - "Competitive gamer, achieved high ranks in multiple games alongside friends and through solo play."
