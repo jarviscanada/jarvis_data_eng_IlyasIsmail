@@ -1,6 +1,6 @@
 # Ilyas Ismail . Jarvis Consulting
 
-I'm a recent graduate with Honours from Centennial College with an Advanced Diploma in Software Engineering Technology. I'm an experienced Java and web developer who has built multiple Spring Boot applications, such as a library management tool for librarians to maintain their customers, books, and transactions in a MySQL database through CRUD features. I've also designed and developed ASP.NET and MERN-based web applications, such as a book store that allowed users to browse for books stored on a MongoDB database based on their search filter and add it to their cart for check-out. To summarize, I'm looking to put my experience and skills to good use in the software development industry.
+I'm a recent graduate with Honours from Centennial College with an Advanced Diploma in Software Engineering Technology. I am passionate about building applications with systems that will be utilized by many different users. I'm also an experienced Java and web developer who has built multiple Spring Boot applications, such as a library management tool for librarians to maintain their customers, books, and transactions in a MySQL database through CRUD features. I've also designed and developed ASP.NET and MERN-based web applications, such as a book store that allowed users to browse for books stored on a MongoDB database based on their search filter and add it to their cart for check-out. To summarize, I'm looking to put my experience and skills to good use in the software development industry.
 
 ## Skills
 
@@ -23,12 +23,12 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_IlyasIsmai
 
 **Video File Sharing Site**: Developed an MvC ASP.NET web application that allowed users to register, log in, and upload or edit their video files for other users to download and comment on to leave a review. The uploader would provide the title, genre, description, and release date of the video. The other two columns, uploader, and ratings, are automatically generated based on other values such as the uploader's account name and the comments provided. Other users can comment on videos and leave a rating out of ten, the average rating of the video is the video's overall rating. DynamoDB was used to store all the text values for every movie object. Amazon S3 was used to store and download the video files. Elastic Beanstalk was used to host the application online.
 
-**Library Management Tool**: Designed and developed a Spring Boot Java application that allowed librarians to apply CRUD functionalities to customers, books, and transactions. All controllers had CRUD features implemented, however, books also allowed the librarian to view which books were available and which books were loaned out. Maven was used for build automation, to get all the required packages. MySQL was used to store the data for all three models. Apache Tomcat was used to locally host the application.
+**Library Management Tool**: Designed and developed a Spring Boot Java application that allowed librarians to apply CRUD functionalities to customers, books, and transactions. All controllers had CRUD features implemented, the books controller also allowed the librarian to view which books were available and which books were loaned out. Maven was used for build automation, to get all the required packages. MySQL was used to store the data for all three models. Apache Tomcat was used to locally host the application.
 
 
 ## Professional Experiences
 
-**Software Developer, Jarvis (2024-present)**: Practiced Agile methodology through daily scrum meetings, sprint planning, and sprint retrospectives to ensure the best quality of work. Developed programs in Java and Linux/Bash using a Docker PostgreSQL container as the database, and Git for version control. Supplied each project with a detailed README.md file to help others navigate and understand each project developed.
+**Software Developer, Jarvis (2024-present)**: Developed programs in Java and Linux/Bash using a Docker PostgreSQL container as the database, and Git for version control. Supplied each project with a detailed documentation to help others navigate and understand each project developed. Practiced Agile methodology through daily scrum meetings, sprint planning, and sprint retrospectives to ensure the best quality of work.
 
 
 ## Education
@@ -39,4 +39,4 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_IlyasIsmai
 ## Miscellaneous
 - I enjoy playing basketball and volleyball, I played for school teams and my local league
 - I enjoy playing strategic team-focused games such as League of Legends, Rainbow Six Siege, and Counter-Strike 2
-- I recently started learning Blender to create model objects.
+- I recently started learning Blender to create 3-D models.
