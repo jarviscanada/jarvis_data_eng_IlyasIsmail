@@ -1,0 +1,94 @@
+# Preferred name (Characters only)
+name: "Ilyas Ismail"
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_IlyasIsmail
+
+# Introduce yourself, your academic and professional background.
+# What excites you about the software industry and your passion. At least 80 words
+summary: I'm a recent graduate with Honours from Centennial College with an Advanced Diploma in Software Engineering Technology. I am passionate about building applications with systems that will be utilized by many different users. I'm also an experienced Java and web developer who has built multiple Spring Boot applications, such as a library management tool for librarians to maintain their customers, books, and transactions in a MySQL database through CRUD features. I've also designed and developed ASP.NET and MERN-based web applications, such as a book store that allowed users to browse for books stored on a MongoDB database based on their search filter and add it to their cart for check-out. To summarize, I'm looking to put my experience and skills to good use in the software development industry.
+
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+skills:
+  # At least 5 skills
+  proficient:
+    - Java/Sprint Boot
+    - Node.js
+    - Express.js
+    - NoSQL
+    - RDBMS/SQL
+    - React
+    - Amazon Web Services
+    - Linux/Bash
+    - Agile/Scrum
+    - Git
+  # At least 5 skills
+  competent:
+    - C#
+    - ASP.NET
+    - Python
+    - GraphQL
+    - Jira
+    - Azure Data Lake
+  # At least 5 skills
+  familiar:
+    - Angular
+    - Apigee
+    - Google Cloud Platform
+    - Jenkins
+    - PHP
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "/linux_sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Implemented scripts and a database to track and store system specifications and resource usage to assist system administrators with maintaining system performance and faulty hardware. A PostgreSQL Docker container was created to host the database. Bash was used to retrieve the information needed through commands such as vmstat for memory, IO, and CPU usage statistics, df for available disk space, date for the current date in a specific format, and lscpu to retrieve the CPU's hardware details. The script responsible for collecting the system's resource usage was automated using a cron job that would run every minute. Testing was completed manually, running the script on a single machine, and debugging based on any errors thrown. Git and GitHub were used for version control using the GitFlow branching model.
+
+# List of personal or academic projects
+# Feel free to add more projects
+highlighted_projects:
+    #project name
+  - name: "Library Web and Mobile App"
+    #URL is optional
+    git_url: "https://github.com/jamwalab/mylibraryapp/tree/main"
+    # The project description must start with an action verb (tps://bit.ly/3guO98u)
+    description: Collaborated with a team of four to develop a cloud-hosted web application and an accompanying mobile application over four months. Customers could search for books based on filters such as genre or title and were able to add books to their shopping cart. Admins were able to apply CRUD functions on books for maintenance. We implemented the app using the MERN stack alongside libraries such as Axios, JWT, and bcrypt for connection requests and authentication, Bootstrap for better front-end visualization, and Nodemailer to send e-mails. We hosted the web app online through Heroku and the mobile app through Google Firebase. The mobile app made requests directly to and from the web app's API. Testing was done through manual testing of each feature.
+  - name: "Video File Sharing Site"
+    git_url: ""
+    description: Developed an MvC ASP.NET web application that allowed users to register, log in, and upload or edit their video files for other users to download and comment on to leave a review. The uploader would provide the title, genre, description, and release date of the video. The other two columns, uploader, and ratings, are automatically generated based on other values such as the uploader's account name and the comments provided. Other users can comment on videos and leave a rating out of ten, the average rating of the video is the video's overall rating. DynamoDB was used to store all the text values for every movie object. Amazon S3 was used to store and download the video files. Elastic Beanstalk was used to host the application online. 
+
+  - name: "Library Management Tool"
+    git_url: ""
+    description: Designed and developed a Spring Boot Java application that allowed librarians to apply CRUD functionalities to customers, books, and transactions. All controllers had CRUD features implemented, the books controller also allowed the librarian to view which books were available and which books were loaned out. Maven was used for build automation, to get all the required packages. MySQL was used to store the data for all three models. Apache Tomcat was used to locally host the application.
+
+#List of professional experience
+#The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
+professional_experience:
+  #Write your Jarvis role as a professional experience rather than training.
+  - title: "Software Developer"
+    company: "Jarvis"
+    duration: "2024-present"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Developed programs in Java and Linux/Bash using a Docker PostgreSQL container as the database, and Git for version control. Supplied each project with a detailed documentation to help others navigate and understand each project developed. Practiced Agile methodology through daily scrum meetings, sprint planning, and sprint retrospectives to ensure the best quality of work."
+
+#List of edcuation
+education: 
+  - school_name: "Centennial College"
+    duration: "2020-2024"
+    degree: "Advanced Diploma in Software Engineering Technology"
+    department: "Engineering Technology and Applied Science"
+    # optional
+    awards_achievements: 
+      - "Graduated with Honours"
+
+#Optional section
+others:
+    #category
+  - title: "Activities/Hobbies"
+    bullets:
+      - "I enjoy playing basketball and volleyball, I played for school teams and my local league"
+      - "I enjoy playing strategic team-focused games such as League of Legends, Rainbow Six Siege, and Counter-Strike 2"
+      - "I recently started learning Blender to create 3-D models."
