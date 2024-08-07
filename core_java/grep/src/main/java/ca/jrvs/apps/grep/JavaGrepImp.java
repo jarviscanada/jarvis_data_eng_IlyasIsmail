@@ -1,16 +1,14 @@
 package ca.jrvs.apps.grep;
 
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
+import org.apache.log4j.BasicConfigurator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 public class JavaGrepImp implements JavaGrep {
 
@@ -20,6 +18,7 @@ public class JavaGrepImp implements JavaGrep {
     private String rootPath;
     private String outFile;
 
+    //Getters and Setters
     @Override
     public String getRegex() {
         return regex;
@@ -50,6 +49,7 @@ public class JavaGrepImp implements JavaGrep {
         this.outFile = outFile;
     }
 
+    //parent method which will run all the methods needed for desired result
     @Override
     public void process() throws IOException {
         ArrayList<String> matchedLines = new ArrayList<String>();
@@ -62,14 +62,21 @@ public class JavaGrepImp implements JavaGrep {
         writeToFile(matchedLines);
     }
 
+    //return a list of all the files in the given rootDir
     @Override
     public List<File> listFiles(String rootDir) {
 
         File dir = new File(rootDir);
-
-        return Arrays.asList(dir.listFiles());
+        FilenameFilter filenameFilter = new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                return name.toLowerCase().endsWith(".txt");
+            }
+        };
+        return Arrays.asList(dir.listFiles(filenameFilter));
     }
 
+    //return a String list of all the lines in the given text file
     @Override
     public List<String> readLines(File inputFile) {
         List<String> lines = new ArrayList<String>();
@@ -88,11 +95,13 @@ public class JavaGrepImp implements JavaGrep {
         return lines;
     }
 
+    //return a boolean based on the regex pattern and inputted line
     @Override
     public boolean containsPattern(String line) {
         return line.matches(regex);
     }
 
+    //create a new txt file with all the lines that contain a matching pattern in the given outFile path
     @Override
     public void writeToFile(List<String> lines) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outFile));
@@ -103,6 +112,12 @@ public class JavaGrepImp implements JavaGrep {
     }
 
     public static void main(String[] args) {
+        if (args.length != 3) {
+            throw new IllegalArgumentException("USAGE: JavaGrep regex rootPath outFile");
+        }
+
+        BasicConfigurator.configure();
+
         JavaGrepImp javaGrepImp = new JavaGrepImp();
         javaGrepImp.setRegex(args[0]);
         javaGrepImp.setRootPath(args[1]);
