@@ -11,7 +11,7 @@ import java.util.Optional;
 
 public class PositionDao implements CrudDao<Position, String>{
 
-    Connection c;
+    private Connection c;
 
     private static final String UPSERT = "INSERT INTO position (symbol, number_of_shares, value_paid) " +
             "VALUES (?, ?, ?) " +
@@ -36,6 +36,11 @@ public class PositionDao implements CrudDao<Position, String>{
 
     @Override
     public Position save(Position entity) throws IllegalArgumentException {
+
+        if(entity.getSymbol() == null) {
+            throw new IllegalArgumentException("The id (symbol) cannot be null.");
+        }
+
         try(PreparedStatement statement = c.prepareStatement(UPSERT);) {
             statement.setString(1, entity.getSymbol());
             statement.setInt(2, entity.getNumOfShares());
@@ -50,6 +55,11 @@ public class PositionDao implements CrudDao<Position, String>{
 
     @Override
     public Optional<Position> findById(String s) throws IllegalArgumentException {
+
+        if(s == null) {
+            throw new IllegalArgumentException("The id (symbol) cannot be null.");
+        }
+
         Position position = new Position();
         try(PreparedStatement statement = c.prepareStatement(GET_ONE);) {
             statement.setString(1, s);
@@ -87,6 +97,11 @@ public class PositionDao implements CrudDao<Position, String>{
 
     @Override
     public void deleteById(String s) throws IllegalArgumentException {
+
+        if(s == null) {
+            throw new IllegalArgumentException("The id (symbol) cannot be null.");
+        }
+
         try(PreparedStatement statement = c.prepareStatement(DELETE);) {
             statement.setString(1, s);
             statement.execute();

@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 public class QuoteHttpHelper {
 
     private OkHttpClient client;
-    private final String apiKey = "apikey";
+    private final String apiKey = "key";
 
     public Quote fetchQuoteInfo(String symbol) throws IllegalArgumentException {
         Request request = new Request.Builder()

@@ -23,7 +23,7 @@ public class JDBCExecutor {
 
         OkHttpClient client = new OkHttpClient();
         String symbol = "MSFT";
-        String apiKey = "apikey";
+        String apiKey = "e2e1f2e339mshe440d2f1c75e41fp1aba0bjsn5a724dabbc5f";
         Request request = new Request.Builder()
                 .url("https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol="+symbol+"&datatype=json")
                 .header("X-RapidAPI-Key", apiKey)

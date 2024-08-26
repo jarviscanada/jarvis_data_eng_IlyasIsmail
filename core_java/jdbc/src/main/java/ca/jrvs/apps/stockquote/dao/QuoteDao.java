@@ -15,7 +15,8 @@ public class QuoteDao implements CrudDao<Quote, String>{
     private Connection c;
 
     private static final String UPSERT = "INSERT INTO quote (symbol, open, high, low, price, volume, latest_trading_day, " +
-            "previous_close, change, change_percent, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) " +
+            "previous_close, change, change_percent, timestamp) " +
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) " +
             "ON CONFLICT(symbol) " +
             "DO UPDATE SET " +
             "symbol = EXCLUDED.symbol, " +
