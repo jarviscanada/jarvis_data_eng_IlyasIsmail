@@ -17,6 +17,6 @@ public class QuoteService {
     }
 
     public Optional<Quote> fetchQuoteDataFromAPI(String symbol) {
-        return Optional.of(httpHelper.fetchQuoteInfo(symbol));
+        return Optional.of(dao.save(httpHelper.fetchQuoteInfo(symbol)));
     }
 }

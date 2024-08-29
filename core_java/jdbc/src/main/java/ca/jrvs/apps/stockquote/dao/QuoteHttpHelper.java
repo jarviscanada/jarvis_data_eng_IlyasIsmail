@@ -7,16 +7,21 @@ import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.sql.Date;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public class QuoteHttpHelper {
 
     private OkHttpClient client;
-    private final String apiKey = "key";
+    private final String apiKey;
+    private final Logger logger = LoggerFactory.getLogger(QuoteHttpHelper.class);
+
+    public QuoteHttpHelper(String apiKey) {
+        this.apiKey = apiKey;
+    }
 
     public Quote fetchQuoteInfo(String symbol) throws IllegalArgumentException {
         Request request = new Request.Builder()
@@ -33,7 +38,7 @@ public class QuoteHttpHelper {
             response.close();
 
             if(jsonNode.at("/Global Quote/01. symbol").asText().isEmpty()) {
-                throw new IllegalArgumentException("Invalid symbol.");
+                throw new IllegalArgumentException("Invalid symbol or too many requests.");
             }
 
             Quote quote = new Quote();
@@ -50,7 +55,7 @@ public class QuoteHttpHelper {
 
             return quote;
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("There was an input/output error when trying to fetch quote info from the API.", e);
         }
         return new Quote();
     }

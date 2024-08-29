@@ -29,7 +29,7 @@ public class QuoteService_UnitTest {
         Quote quote = new Quote();
         quote.setSymbol("MSFT");
         quote.setPrice(150);
-        when(quoteHttpHelper.fetchQuoteInfo("MSFT")).thenReturn(quote);
+        when(quoteDao.save(quoteHttpHelper.fetchQuoteInfo("MSFT"))).thenReturn(quote);
     }
 
     @Test

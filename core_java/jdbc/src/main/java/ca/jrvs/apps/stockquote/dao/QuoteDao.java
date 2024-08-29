@@ -2,17 +2,18 @@ package ca.jrvs.apps.stockquote.dao;
 
 import ca.jrvs.apps.stockquote.Quote;
 import com.sun.corba.se.impl.ior.GenericTaggedComponent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Optional;
 
 public class QuoteDao implements CrudDao<Quote, String>{
 
     private Connection c;
+
+    private final Logger logger = LoggerFactory.getLogger(QuoteDao.class);
 
     private static final String UPSERT = "INSERT INTO quote (symbol, open, high, low, price, volume, latest_trading_day, " +
             "previous_close, change, change_percent, timestamp) " +
@@ -51,6 +52,8 @@ public class QuoteDao implements CrudDao<Quote, String>{
             throw new IllegalArgumentException("The id (symbol) cannot be null.");
         }
 
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+
         try(PreparedStatement statement = c.prepareStatement(UPSERT);) {
             statement.setString(1, entity.getSymbol());
             statement.setDouble(2, entity.getOpen());
@@ -62,11 +65,11 @@ public class QuoteDao implements CrudDao<Quote, String>{
             statement.setDouble(8, entity.getPreviousClose());
             statement.setDouble(9, entity.getChange());
             statement.setString(10, entity.getChangePercent());
-            statement.setTimestamp(11, entity.getTimestamp());
+            statement.setTimestamp(11, timestamp);
             statement.execute();
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            logger.error("There was an error saving/updating a quote to the database.", e);
+            throw new RuntimeException("There was an error accessing the database.", e);
         }
         return entity;
     }
@@ -96,8 +99,8 @@ public class QuoteDao implements CrudDao<Quote, String>{
                 quote.setTimestamp(resultSet.getTimestamp("timestamp"));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            logger.error("There was an error when trying to retrieve a quote from the database.", e);
+            throw new RuntimeException("There was an error accessing the database.", e);
         }
         return Optional.of(quote);
     }
@@ -123,8 +126,8 @@ public class QuoteDao implements CrudDao<Quote, String>{
                 quotes.add(quote);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            logger.error("There was an error trying to retrieve all quotes from the database.", e);
+            throw new RuntimeException("There was an error accessing the database.", e);
         }
         return quotes;
     }
@@ -140,8 +143,8 @@ public class QuoteDao implements CrudDao<Quote, String>{
             statement.setString(1, s);
             statement.execute();
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            logger.error("There was an error when trying to delete a quote from the database", e);
+            throw new RuntimeException("There was an error accessing the database.", e);
         }
     }
 
@@ -150,8 +153,8 @@ public class QuoteDao implements CrudDao<Quote, String>{
         try(PreparedStatement statement = c.prepareStatement(DELETE_ALL);) {
             statement.execute();
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            logger.error("There was an error when trying to delete all quotes from the database.", e);
+            throw new RuntimeException("There was an error accessing the database.", e);
         }
     }
 }

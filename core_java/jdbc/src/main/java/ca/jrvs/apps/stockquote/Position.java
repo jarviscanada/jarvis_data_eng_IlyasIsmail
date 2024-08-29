@@ -39,4 +39,13 @@ public class Position {
     public void setValuePaid(double valuePaid) {
         this.valuePaid = valuePaid;
     }
+
+    @Override
+    public String toString() {
+        return "--------------------------------------------" + System.lineSeparator() +
+                "Position: " + System.lineSeparator() +
+                "Symbol: " + symbol + System.lineSeparator() +
+                "Number of Shares: " + numOfShares + System.lineSeparator() +
+                "Value Paid: " + valuePaid + System.lineSeparator();
+    }
 }

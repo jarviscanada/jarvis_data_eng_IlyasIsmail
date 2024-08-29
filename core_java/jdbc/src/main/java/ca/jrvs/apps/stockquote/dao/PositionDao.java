@@ -1,6 +1,8 @@
 package ca.jrvs.apps.stockquote.dao;
 
 import ca.jrvs.apps.stockquote.Position;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,6 +14,8 @@ import java.util.Optional;
 public class PositionDao implements CrudDao<Position, String>{
 
     private Connection c;
+
+    private final Logger logger = LoggerFactory.getLogger(PositionDao.class);
 
     private static final String UPSERT = "INSERT INTO position (symbol, number_of_shares, value_paid) " +
             "VALUES (?, ?, ?) " +
@@ -47,8 +51,8 @@ public class PositionDao implements CrudDao<Position, String>{
             statement.setDouble(3, entity.getValuePaid());
             statement.execute();
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            logger.error("Error in saving/updating a position in the database.", e);
+            throw new RuntimeException("There was an error accessing the database.", e);
         }
         return entity;
     }
@@ -70,8 +74,8 @@ public class PositionDao implements CrudDao<Position, String>{
                 position.setValuePaid(resultSet.getDouble("value_paid"));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            logger.error("There was an error in retrieving a position from the database.", e);
+            throw new RuntimeException("There was an error accessing the database.", e);
         }
         return Optional.of(position);
     }
@@ -89,8 +93,8 @@ public class PositionDao implements CrudDao<Position, String>{
                 positions.add(position);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            logger.error("There was an error in retrieving multiple positions from the database.", e);
+            throw new RuntimeException("There was an error accessing the database.", e);
         }
         return positions;
     }
@@ -106,8 +110,8 @@ public class PositionDao implements CrudDao<Position, String>{
             statement.setString(1, s);
             statement.execute();
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            logger.error("There was an error in deleting an position from the database.", e);
+            throw new RuntimeException("There was an error accessing the database.", e);
         }
     }
 
@@ -116,8 +120,8 @@ public class PositionDao implements CrudDao<Position, String>{
         try(PreparedStatement statement = c.prepareStatement(DELETE_ALL);) {
             statement.execute();
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            logger.error("There was an error deleting all positions from the database.", e);
+            throw new RuntimeException("There was an error accessing the database.", e);
         }
     }
 }

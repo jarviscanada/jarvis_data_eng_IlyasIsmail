@@ -126,4 +126,20 @@ public class Quote {
     public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
     }
+
+    @Override
+    public String toString() {
+        return "--------------------------------------------" + System.lineSeparator() +
+                "Quote: " + System.lineSeparator() +
+                "Symbol: " + symbol + System.lineSeparator() +
+                "Open: " + open + System.lineSeparator() +
+                "High: " + high + System.lineSeparator() +
+                "Low: " + low + System.lineSeparator() +
+                "Price: " + price + System.lineSeparator() +
+                "Volume: " + volume + System.lineSeparator() +
+                "Latest Trading Day: "  + latestTradingDay + System.lineSeparator() +
+                "Previous Close: " + previousClose + System.lineSeparator() +
+                "Change: " + change + System.lineSeparator() +
+                "Change Percent: " + changePercent + System.lineSeparator();
+    }
 }
