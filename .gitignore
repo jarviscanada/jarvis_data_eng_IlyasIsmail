@@ -7,3 +7,6 @@ target/
 *.iml
 .idea/
 .eclipse
+node_modules/
+package.json
+package-lock.json
