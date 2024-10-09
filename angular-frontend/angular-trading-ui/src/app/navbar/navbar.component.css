@@ -1,0 +1,8 @@
+.nav-item {
+    display: flex;
+    padding-top: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40px;
+    font-size: 40px;
+}
