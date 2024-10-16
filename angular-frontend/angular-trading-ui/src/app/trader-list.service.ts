@@ -59,6 +59,30 @@ export class TraderListService {
     this.traderList.next(arr);
   }
 
+  addFunds(id: number, amount: number): void {
+    let arr: Trader[] = this.traderList.getValue();
+    arr.forEach((item, index) => {
+      if (item.id == id) { 
+        item.amount = item.amount + amount;
+        console.log(item.amount);
+      }
+    });
+
+    this.traderList.next(arr);
+  }
+
+  removeFunds(id: number, amount:number): void {
+    let arr: Trader[] = this.traderList.getValue();
+    arr.forEach((item, index) => {
+      if (item.id == id) { 
+        item.amount = item.amount - amount;
+        console.log(item.amount);
+      }
+    });
+
+    this.traderList.next(arr);
+  }
+
   addTrader(trader: Trader): void {
     let arr: Trader[] = this.traderList.getValue();
 

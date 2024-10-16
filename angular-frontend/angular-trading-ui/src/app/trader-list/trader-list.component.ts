@@ -5,6 +5,7 @@ import { Trader } from '../trader';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { AddTraderDialogComponent } from '../add-trader-dialog/add-trader-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-trader-list',
@@ -16,15 +17,17 @@ export class TraderListComponent implements OnInit{
   traders!: Trader[];
   dataSource: any;
 
-  constructor(private service: TraderListService, public dialog: MatDialog) { }
+  constructor(private service: TraderListService, public dialog: MatDialog, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getDataSource().subscribe(data => {
-      this.traders = data;
-      this.dataSource = new MatTableDataSource(this.traders);
-      console.log(this.traders);
-      console.log(this.service.getColumns())
-    })
+    if(!this.traders) {
+      this.service.getDataSource().subscribe(data => {
+        this.traders = data;
+        this.dataSource = new MatTableDataSource(this.traders);
+        console.log(this.traders);
+        console.log(this.service.getColumns())
+      })
+    }
   }
 
   deleteTrader(event: Event, id: number): void {
@@ -34,6 +37,19 @@ export class TraderListComponent implements OnInit{
     } catch (error) {
       console.log(error);
     }
+  }
+
+  editTrader(event: Event, trader: Trader): void {
+    let testTrader: Trader = trader;
+    this.router.navigate(['/trader-account/' + trader.id], {queryParams: {
+      "id": trader.id,
+      "firstName": trader.firstName,
+      "lastName": trader.lastName,
+      "dateOfBirth": trader.dateOfBirth,
+      "country": trader.country,
+      "email": trader.email,
+      "amount": trader.amount
+    }});
   }
 
   addTrader(event: Event): void {
