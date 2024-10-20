@@ -4,11 +4,11 @@ I'm a recent graduate with Honours from Centennial College with an Advanced Dipl
 
 ## Skills
 
-**Proficient:** Java/Spring Boot, Node.js, Express.js, NoSQL, RDBMS/SQL, React, Amazon Web Services, Linux/Bash, Agile/Scrum, Git
+**Proficient:** Java/Spring Boot, Node.js, Express.js, NoSQL, RDBMS/SQL, React, Angular, Amazon Web Services, Linux/Bash, Agile/Scrum, Git
 
 **Competent:** C#, ASP.NET, Python, GraphQL, Jira, Azure Data Lake
 
-**Familiar:** Angular, Apigee, Google Cloud Platform, Jenkins, PHP
+**Familiar:** MATLAB, Apigee, Google Cloud Platform, Jenkins, PHP
 
 ## Jarvis Projects
 
@@ -22,6 +22,10 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_IlyasIsmai
   - JDBC App: Developed a Java 8 application to simulate purchasing and selling stocks based on real statistics from the Alpha Vantage REST API. The application takes one input from the user, the location of their properties.txt file. The application consists of three DAOs, two services, and one controller. The DAOs implement CRUD methods for stock quotes and positions to interact with a PostgreSQL database and the Alpha Vantage REST API. The services handle the business logic, such as ensuring the user is trying to purchase a valid amount of stocks, and calls on the DAOs to interact with the database. The controller acts as the console UI, it takes inputs from the user and passes them into the appropriate methods. Testing was done through unit, integration, and manual testing. Unit testing was done to ensure each method worked independently. Integration testing ensured the methods worked end-to-end, including retrieving and saving objects to and from the database. Manual testing was performed to confirm the console UI worked as intended, with SLF4J logs implemented to catch any errors. The application was deployed through Docker, with an image being created and published to Docker Hub for users to conveniently access. Git and GitHub were used for version control using the GitFlow branching method.
   - Grep App: Developed a Java 8 application to mimic the Linux grep command. The application takes three inputs from the user: a regular expression pattern, the absolute path to the directory containing the files to be processed, and the absolute path for the output file produced by the application. The stream API is used within lambda expressions to retrieve all the files in the given directory and to store each line from the files into a list. Each line is then checked to see if it contains the pattern inputted by the user. Once all the files are processed, all matching lines are written and saved to the given output file path using BufferedWriter. Testing was completed manually, using different patterns and multiple files to check for errors through SLF4J logs. Deployment was done through Docker, a Dockerfile was created to build and upload an image to Docker Hub for users to consume easily. Git and GitHub were used for version control using the GitFlow branching method.
 
+**JavaScript & TypeScript Intro** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_IlyasIsmail/tree/master/JavaScript_TypeScript)]: Developed a script to detect if a string had HTML or CSS contents, displaying the content tag and the amount of times it has appeared using JavaScript and Typescript. Completed TypeScript exercises with a focus on type checking, type creation, data filtering, and utility types. Implemented a doubly linked list using TypeScript with a node object and push, pop, shift, and unshift functions to handle data for the doubly linked list. Git and GitHub were used for version control using the GitFlow branching model.
+
+**Angular Trading App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_IlyasIsmail/tree/master/angular-frontend)]: Developed a web application that implemented CRUD methods for traders and pulls data from an API to show stock quote data using Node.js, Angular, and Angular Material. The trader components and service allow anybody to create a trader through a dialog box, or delete a trader through a button. Users can also edit the trader's information and add or withdraw funds from their account. It displays all traders in a dynamically updating list created through the use of observables and an Angular Material table. Users can also access a quote page, the quote service pulls stock quote data from the Alpha Vantage API through the use of HttpClient and displays it through an Angular component. Git and GitHub were used for version control using the GitFlow branching model.
+
 
 ## Highlighted Projects
 **Library Web and Mobile App** [[GitHub](https://github.com/jamwalab/mylibraryapp/tree/main)]: Collaborated with a team of four to develop a cloud-hosted web application and an accompanying mobile application over four months. Customers could search for books based on filters such as genre or title and were able to add books to their shopping cart. Admins were able to apply CRUD functions on books for maintenance. We implemented the app using the MERN stack alongside libraries such as Axios, JWT, and bcrypt for connection requests and authentication, Bootstrap for better front-end visualization, and Nodemailer to send e-mails. We hosted the web app online through Heroku and the mobile app through Google Firebase. The mobile app made requests directly to and from the web app's API. Testing was done through manual testing of each feature.
@@ -33,7 +37,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_IlyasIsmai
 
 ## Professional Experiences
 
-**Software Developer, Jarvis (2024-present)**: Developed programs in Java and Linux/Bash using a Docker PostgreSQL container as the database, and Git for version control. Supplied each project with a detailed documentation to help others navigate and understand each project developed. Practiced Agile methodology through daily scrum meetings, sprint planning, and sprint retrospectives to ensure the best quality of work.
+**Software Developer, Jarvis (2024-present)**: Developed programs in Java, JavaScript, TypeScript, Node.js, Angular, Angular Material,  and Linux/Bash using a Docker PostgreSQL container as the database. Git and GitHub was used for version control through the GitFlow branching model. Supplied each project with detailed documentation to help others navigate and understand each project developed. Practiced Agile methodology through daily scrum meetings, sprint planning, and sprint retrospectives to ensure the best quality of work.
 
 
 ## Education

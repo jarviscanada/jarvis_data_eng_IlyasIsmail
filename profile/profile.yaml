@@ -18,6 +18,7 @@ skills:
     - NoSQL
     - RDBMS/SQL
     - React
+    - Angular
     - Amazon Web Services
     - Linux/Bash
     - Agile/Scrum
@@ -32,7 +33,7 @@ skills:
     - Azure Data Lake
   # At least 5 skills
   familiar:
-    - Angular
+    - MATLAB
     - Apigee
     - Google Cloud Platform
     - Jenkins
@@ -50,6 +51,16 @@ jarvis_projects:
     description:
       - "JDBC App: Developed a Java 8 application to simulate purchasing and selling stocks based on real statistics from the Alpha Vantage REST API. The application takes one input from the user, the location of their properties.txt file. The application consists of three DAOs, two services, and one controller. The DAOs implement CRUD methods for stock quotes and positions to interact with a PostgreSQL database and the Alpha Vantage REST API. The services handle the business logic, such as ensuring the user is trying to purchase a valid amount of stocks, and calls on the DAOs to interact with the database. The controller acts as the console UI, it takes inputs from the user and passes them into the appropriate methods. Testing was done through unit, integration, and manual testing. Unit testing was done to ensure each method worked independently. Integration testing ensured the methods worked end-to-end, including retrieving and saving objects to and from the database. Manual testing was performed to confirm the console UI worked as intended, with SLF4J logs implemented to catch any errors. The application was deployed through Docker, with an image being created and published to Docker Hub for users to conveniently access. Git and GitHub were used for version control using the GitFlow branching method."
       - "Grep App: Developed a Java 8 application to mimic the Linux grep command. The application takes three inputs from the user: a regular expression pattern, the absolute path to the directory containing the files to be processed, and the absolute path for the output file produced by the application. The stream API is used within lambda expressions to retrieve all the files in the given directory and to store each line from the files into a list. Each line is then checked to see if it contains the pattern inputted by the user. Once all the files are processed, all matching lines are written and saved to the given output file path using BufferedWriter. Testing was completed manually, using different patterns and multiple files to check for errors through SLF4J logs. Deployment was done through Docker, a Dockerfile was created to build and upload an image to Docker Hub for users to consume easily. Git and GitHub were used for version control using the GitFlow branching method."
+  - name: "JavaScript & TypeScript Intro"
+    git_url: "/JavaScript_TypeScript"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Developed a script to detect if a string had HTML or CSS contents, displaying the content tag and the amount of times it has appeared using JavaScript and Typescript. Completed TypeScript exercises with a focus on type checking, type creation, data filtering, and utility types. Implemented a doubly linked list using TypeScript with a node object and push, pop, shift, and unshift functions to handle data for the doubly linked list. Git and GitHub were used for version control using the GitFlow branching model.
+  - name: "Angular Trading App"
+    git_url: "/angular-frontend"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Developed a web application that implemented CRUD methods for traders and pulls data from an API to show stock quote data using Node.js, Angular, and Angular Material. The trader components and service allow anybody to create a trader through a dialog box, or delete a trader through a button. Users can also edit the trader's information and add or withdraw funds from their account. It displays all traders in a dynamically updating list created through the use of observables and an Angular Material table. Users can also access a quote page, the quote service pulls stock quote data from the Alpha Vantage API through the use of HttpClient and displays it through an Angular component. Git and GitHub were used for version control using the GitFlow branching model.
 # List of personal or academic projects
 # Feel free to add more projects
 highlighted_projects:
@@ -76,7 +87,7 @@ professional_experience:
     company: "Jarvis"
     duration: "2024-present"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: "Developed programs in Java and Linux/Bash using a Docker PostgreSQL container as the database, and Git for version control. Supplied each project with a detailed documentation to help others navigate and understand each project developed. Practiced Agile methodology through daily scrum meetings, sprint planning, and sprint retrospectives to ensure the best quality of work."
+    description: "Developed programs in Java, JavaScript, TypeScript, Node.js, Angular, Angular Material,  and Linux/Bash using a Docker PostgreSQL container as the database. Git and GitHub was used for version control through the GitFlow branching model. Supplied each project with detailed documentation to help others navigate and understand each project developed. Practiced Agile methodology through daily scrum meetings, sprint planning, and sprint retrospectives to ensure the best quality of work."
 
 #List of edcuation
 education: 
