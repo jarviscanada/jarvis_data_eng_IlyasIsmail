@@ -41,6 +41,16 @@
       ],
       "git_url": "/core_java",
       "name": "Core Java Apps"
+    },
+    {
+      "description": "Developed a script to detect if a string had HTML or CSS contents, displaying the content tag and the amount of times it has appeared using JavaScript and Typescript. Completed TypeScript exercises with a focus on type checking, type creation, data filtering, and utility types. Implemented a doubly linked list using TypeScript with a node object and push, pop, shift, and unshift functions to handle data for the doubly linked list. Git and GitHub were used for version control using the GitFlow branching model.",
+      "git_url": "/JavaScript_TypeScript",
+      "name": "JavaScript \u0026 TypeScript Intro"
+    },
+    {
+      "description": "Developed a web application that implemented CRUD methods for traders and pulls data from an API to show stock quote data using Node.js, Angular, and Angular Material. The trader components and service allow anybody to create a trader through a dialog box, or delete a trader through a button. Users can also edit the trader's information and add or withdraw funds from their account. It displays all traders in a dynamically updating list created through the use of observables and an Angular Material table. Users can also access a quote page, the quote service pulls stock quote data from the Alpha Vantage API through the use of HttpClient and displays it through an Angular component. Git and GitHub were used for version control using the GitFlow branching model.",
+      "git_url": "/angular-frontend",
+      "name": "Angular Trading App"
     }
   ],
   "name": "Ilyas Ismail",
@@ -57,7 +67,7 @@
   "professional_experience": [
     {
       "company": "Jarvis",
-      "description": "Developed programs in Java and Linux/Bash using a Docker PostgreSQL container as the database, and Git for version control. Supplied each project with a detailed documentation to help others navigate and understand each project developed. Practiced Agile methodology through daily scrum meetings, sprint planning, and sprint retrospectives to ensure the best quality of work.",
+      "description": "Developed programs in Java, JavaScript, TypeScript, Node.js, Angular, Angular Material,  and Linux/Bash using a Docker PostgreSQL container as the database. Git and GitHub was used for version control through the GitFlow branching model. Supplied each project with detailed documentation to help others navigate and understand each project developed. Practiced Agile methodology through daily scrum meetings, sprint planning, and sprint retrospectives to ensure the best quality of work.",
       "duration": "2024-present",
       "title": "Software Developer"
     }
@@ -72,7 +82,7 @@
       "Azure Data Lake"
     ],
     "familiar": [
-      "Angular",
+      "MATLAB",
       "Apigee",
       "Google Cloud Platform",
       "Jenkins",
@@ -85,6 +95,7 @@
       "NoSQL",
       "RDBMS/SQL",
       "React",
+      "Angular",
       "Amazon Web Services",
       "Linux/Bash",
       "Agile/Scrum",
