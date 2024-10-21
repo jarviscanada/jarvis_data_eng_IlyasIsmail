@@ -22,6 +22,8 @@ import { TraderAccountComponent } from './trader-account/trader-account.componen
 import { AddFundsDialogComponent } from './add-funds-dialog/add-funds-dialog.component';
 import { RemoveFundsDialogComponent } from './remove-funds-dialog/remove-funds-dialog.component';
 import { TraderListService } from './trader-list.service';
+import { QuotesListComponent } from './quotes-list/quotes-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { TraderListService } from './trader-list.service';
     AddTraderDialogComponent,
     TraderAccountComponent,
     AddFundsDialogComponent,
-    RemoveFundsDialogComponent
+    RemoveFundsDialogComponent,
+    QuotesListComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { TraderListService } from './trader-list.service';
     FormsModule,
     ReactiveFormsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    HttpClientModule
   ],
   providers: [TraderListService],
   bootstrap: [AppComponent]
