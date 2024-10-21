@@ -18,6 +18,13 @@ import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatNativeDateModule } from '@angular/material/core';
 import { TraderListComponent } from './trader-list/trader-list.component';
 import { AddTraderDialogComponent } from './add-trader-dialog/add-trader-dialog.component';
+import { TraderAccountComponent } from './trader-account/trader-account.component';
+import { AddFundsDialogComponent } from './add-funds-dialog/add-funds-dialog.component';
+import { RemoveFundsDialogComponent } from './remove-funds-dialog/remove-funds-dialog.component';
+import { TraderListService } from './trader-list.service';
+import { QuotesListComponent } from './quotes-list/quotes-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { EditTraderDialogComponent } from './edit-trader-dialog/edit-trader-dialog.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +32,12 @@ import { AddTraderDialogComponent } from './add-trader-dialog/add-trader-dialog.
     DashboardComponent,
     NavbarComponent,
     TraderListComponent,
-    AddTraderDialogComponent
+    AddTraderDialogComponent,
+    TraderAccountComponent,
+    AddFundsDialogComponent,
+    RemoveFundsDialogComponent,
+    QuotesListComponent,
+    EditTraderDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +52,10 @@ import { AddTraderDialogComponent } from './add-trader-dialog/add-trader-dialog.
     FormsModule,
     ReactiveFormsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [TraderListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,26 @@
+.demo-table {
+    width: 100%;
+  }
+  
+  .demo-button-container {
+    padding-bottom: 16px;
+  }
+  
+  .demo-button + .demo-button {
+    margin-left: 8px;
+  }
+  
+  .flexbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-content: stretch;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+  
+  .addButton {
+    align-self: center;
+    margin-left: 71.8%;
+  }

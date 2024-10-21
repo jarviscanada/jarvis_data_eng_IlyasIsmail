@@ -8,5 +8,3 @@ target/
 .idea/
 .eclipse
 node_modules/
-package.json
-package-lock.json
