@@ -1,5 +1,5 @@
 # Introduction
-The Angular Trading App is a web application that allows users to create, edit, delete, and view traders. It also allows users to deposit or withdraw funds from a trader's account. Users are also able to access a 'Quote' page which will display stock quote data pulled from the Alpha Vantage API. The application was built using Angular, Angular Material, and Node.js. HTTPClient was used to access the Alpha Vantage API and utilize the returned observable with Angular Material tables to display the results. Docker was used to create and upload an image to Dockerhub for users to easily access. Git and GitHub were used for version control through the GitFlow branching model.
+The Angular Trading App is a web application that allows users to create, edit, delete, and view traders. It also allows users to deposit or withdraw funds from a trader's account. Users are also able to access a 'Quote' page which will display stock quote data pulled from the Alpha Vantage API. The application was built using Angular, Angular Material, and Node.js. HTTPClient was used to access the Alpha Vantage API and utilize the returned observable with Angular Material tables to display the results. Docker was used to create and upload an image to Docker Hub for users to easily access. Git and GitHub were used for version control through the GitFlow branching model.
 
 # Quick Start
 After you have downloaded the Docker image, input the following command:
@@ -20,7 +20,7 @@ The program will open the user onto a list of pre-created traders. From there, t
 The application was testing during development through the use of ng serve. As the project's features were being implemented, the web application was being refreshed and tested to ensure each feature worked as intended.
 
 # Deployment
-The application was deployed through Dockerhub. A Dockerfile was created to store the application inside of a docker image, which was uploaded to Dockerhub. The source code was deployed onto GitHub using Git.
+The application was deployed through Docker Hub. A Dockerfile was created to store the application inside of a docker image, which was uploaded to Docker Hub. The source code was deployed onto GitHub using Git.
 
 # Improvements
 - handle Quote adding/removing
