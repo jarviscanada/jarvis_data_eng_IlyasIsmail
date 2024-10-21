@@ -24,6 +24,7 @@ import { RemoveFundsDialogComponent } from './remove-funds-dialog/remove-funds-d
 import { TraderListService } from './trader-list.service';
 import { QuotesListComponent } from './quotes-list/quotes-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EditTraderDialogComponent } from './edit-trader-dialog/edit-trader-dialog.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     TraderAccountComponent,
     AddFundsDialogComponent,
     RemoveFundsDialogComponent,
-    QuotesListComponent
+    QuotesListComponent,
+    EditTraderDialogComponent
   ],
   imports: [
     BrowserModule,

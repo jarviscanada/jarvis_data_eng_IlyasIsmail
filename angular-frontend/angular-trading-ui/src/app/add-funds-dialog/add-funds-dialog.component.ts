@@ -22,7 +22,7 @@ export class AddFundsDialogComponent implements OnInit {
   })
 
   addFunds():void {
-    this.service.addFunds(this.id, this.depositForm.value.amount)
+    this.service.addFunds(this.id, this.depositForm.value.amount);
   }
 
 }

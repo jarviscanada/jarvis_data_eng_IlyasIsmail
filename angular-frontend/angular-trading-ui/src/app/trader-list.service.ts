@@ -50,6 +50,19 @@ export class TraderListService {
     return ['firstName', 'lastName', 'email', 'dateOfBirth', 'country', 'actions']
   } 
 
+  getTrader(id: number): any {
+    let arr: Trader[] = this.traderList.getValue();
+    let trader: Trader;
+
+    arr.forEach((item, index) => {
+      if (item.id == id) { 
+        trader = item as Trader;
+      }
+    });
+
+    return trader!;
+  }
+
   deleteTrader(id: number): void {
     let arr: Trader[] = this.traderList.getValue();
     arr.forEach((item, index) => {
@@ -64,7 +77,6 @@ export class TraderListService {
     arr.forEach((item, index) => {
       if (item.id == id) { 
         item.amount = item.amount + amount;
-        console.log(item.amount);
       }
     });
 
@@ -76,7 +88,6 @@ export class TraderListService {
     arr.forEach((item, index) => {
       if (item.id == id) { 
         item.amount = item.amount - amount;
-        console.log(item.amount);
       }
     });
 
@@ -90,6 +101,28 @@ export class TraderListService {
     trader.id = latestTrader.id + 1;
     trader.key = latestTrader.key + 1;
     arr.push(trader);
+
+    this.traderList.next(arr);
+  }
+
+  editTrader(id: number, fName: string, lName: string, email: string): void {
+    let arr: Trader[] = this.traderList.getValue();
+    arr.forEach((item, index) => {
+      if (item.id == id) { 
+
+        if (fName && fName != item.firstName) {
+          item.firstName = fName;
+        }
+        
+        if (lName && lName != item.lastName) {
+          item.lastName = lName;
+        }
+
+        if (email && email != item.email) {
+          item.email = email;
+        }
+      }
+    });
 
     this.traderList.next(arr);
   }

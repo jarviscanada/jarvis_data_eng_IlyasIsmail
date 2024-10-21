@@ -5,6 +5,8 @@ import { TraderListService } from '../trader-list.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddFundsDialogComponent } from '../add-funds-dialog/add-funds-dialog.component';
 import { RemoveFundsDialogComponent } from '../remove-funds-dialog/remove-funds-dialog.component';
+import { EditTraderDialogComponent } from '../edit-trader-dialog/edit-trader-dialog.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-trader-account',
@@ -14,34 +16,15 @@ import { RemoveFundsDialogComponent } from '../remove-funds-dialog/remove-funds-
 
 export class TraderAccountComponent implements OnInit {
 
-  //tempId!: number;
-  trader: Trader = {
-    id: -1,
-    key: 0,
-    firstName: '',
-    lastName: '',
-    dateOfBirth: '',
-    country: '',
-    email: '',
-    amount: 0
-  };
+  testing$!: Observable<Trader[]>;
+  trader!: Trader;
 
   constructor(private activatedRoute: ActivatedRoute, private service: TraderListService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams
-    .subscribe(params => {
-      this.trader.id = params['id'];
-      this.trader.firstName = params["firstName"];
-      this.trader.lastName = params['lastName'];
-      this.trader.dateOfBirth = params['dateOfBirth'];
-      this.trader.country = params['country'];
-      this.trader.email = params['email'];
-      this.trader.amount = params['amount'];
-    })
-    /** 
-    this.tempId = this.activatedRoute.snapshot.params['id'];
-    console.log(this.tempId);*/
+    let id: number = this.activatedRoute.snapshot.params['id'];
+    this.trader = this.service.getTrader(id);
+    console.log(this.trader);
   }
 
   addFunds(event: Event):void {
@@ -51,10 +34,6 @@ export class TraderAccountComponent implements OnInit {
     });
 
     dialog.componentInstance.id = this.trader.id;
-
-    dialog.afterClosed().subscribe(result => {
-      console.log("Dialog result: " + result);
-    });
   }
 
   removeFunds(event: Event):void {
@@ -64,10 +43,15 @@ export class TraderAccountComponent implements OnInit {
     });
 
     dialog.componentInstance.id = this.trader.id;
+  }
 
-    dialog.afterClosed().subscribe(result => {
-      console.log("Dialog result: " + result);
+  editProfile(event: Event): void {
+    let dialog = this.dialog.open(EditTraderDialogComponent, {
+      width: '400px',
+      height: '500px'
     });
+
+    dialog.componentInstance.id = this.trader.id;
   }
 
 
