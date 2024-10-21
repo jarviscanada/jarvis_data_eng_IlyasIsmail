@@ -9,7 +9,7 @@ docker run -d -it -p 80:80/tcp --name angular-trading-app ilyasismaiil/angular-t
 
 Once that is complete, the web applcation will be running on port 80 and will be accessible through this link: localhost:80.
 
-# Implemenation
+# Implementation
 The program will open the user onto a list of pre-created traders. From there, the user can either delete or view the traders through a button click, or create a new trader with a button at the top of the table. If the user decides to create a new trader, a dialog box will pop up, prompting the user to input the necessary fields. Once created, the user will be dynamically added to the trader table. When the user clicks the view button, they will be transferred to the trader's account page. The trader's account page has the added information of the account's amount, the user can also withdraw, deposit, or edit the trader's information through the click of a button which will open a new dialog box. Users can also access a 'Quote' page, the page displays stock quote data pulled from the Alpha Vantage API.
 
 ## Architecture
