@@ -14,7 +14,7 @@ The program will open the user onto a list of pre-created traders. From there, t
 
 ## Architecture
 ![myImage](./assets/components.jpg)
-The architecture design above displays which components are working together and which services are being used.
+<br>The architecture design above displays which components are working together and which services are being used.
 
 # Test
 The application was testing during development through the use of ng serve. As the project's features were being implemented, the web application was being refreshed and tested to ensure each feature worked as intended.
