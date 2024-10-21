@@ -47,7 +47,7 @@ export class TraderAccountComponent implements OnInit {
 
   editProfile(event: Event): void {
     let dialog = this.dialog.open(EditTraderDialogComponent, {
-      width: '500px',
+      width: '400px',
       height: '500px'
     });
 

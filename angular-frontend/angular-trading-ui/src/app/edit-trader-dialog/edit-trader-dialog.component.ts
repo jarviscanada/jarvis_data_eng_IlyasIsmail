@@ -8,16 +8,25 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./edit-trader-dialog.component.css'],
   template: `
     <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-      <input name="first" ngModel  required #first="ngModel"/>
-      <input name="last" ngModel />
-      <input name="email" ngModel />
-      <button (click)="onSubmit(f)" mat-button mat-dialog-close>Submit</button>
-    </form>
-
-    <p>First name value: {{ first.value }}</p>
-    <p>First name valid: {{ first.valid }}</p>
-    <p>Form value: {{ f.value | json }}</p>
-    <p>Form valid: {{ f.valid }}</p>
+<h2 mat-dialog-title>Add New Trader</h2>
+<mat-dialog-content>
+    <p><mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input name="first" matInput ngModel  required #first="ngModel"/>
+    </mat-form-field></p>
+    <p><mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input name="last" matInput ngModel />
+    </mat-form-field></p>
+    <p><mat-form-field>
+        <mat-label>Email</mat-label>
+        <input name="email" matInput ngModel />
+    </mat-form-field></p>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button (click)="onSubmit(f)" mat-button mat-dialog-close>Submit</button>
+</mat-dialog-actions>
+</form>
   `,
 })
 export class EditTraderDialogComponent implements OnInit {
