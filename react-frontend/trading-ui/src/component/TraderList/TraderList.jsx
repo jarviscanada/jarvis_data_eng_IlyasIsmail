@@ -15,6 +15,11 @@ function TraderList(props) {
     // Initialization of columns for table
     const columns = [
         {
+            title: "ID",
+            dataIndex: "_id",
+            key: '_id'
+        },
+        {
             title: 'First Name',
             dataIndex: 'firstName',
             key: 'firstName',
@@ -45,7 +50,7 @@ function TraderList(props) {
             key: 'actions',
             render: (text, record) => (
                 <div className="trader-delete-icon">
-                    <FontAwesomeIcon icon={ deleteIcon } onClick={() => props.onTraderDeleteClick(record.id) } />
+                    <FontAwesomeIcon icon={ deleteIcon } onClick={() => props.onTraderDeleteClick(record._id) } />
                 </div>
             ),
         },
@@ -62,7 +67,7 @@ function TraderList(props) {
 
   return (
    <Table
-   dataSource={dataSource}
+   dataSource={props.traders}
    columns={tableColumns}
    pagination={false}
    />
