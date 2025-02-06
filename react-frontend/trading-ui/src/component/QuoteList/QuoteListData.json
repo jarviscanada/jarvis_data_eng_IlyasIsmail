@@ -1,0 +1,16 @@
+[
+    {
+    "key": "1",
+    "id": 1,
+    "symbol": "Mike",
+    "open": "Spencer",
+    "high": "1990-01-01",
+    "low": "Canada",
+    "price": "mike@test.com",
+    "volume": 0,
+    "latestTradingDay": "Mike",
+    "previousClose": "Spencer",
+    "change": "1990-01-01",
+    "changePercent": "Canada"
+    }
+    ]

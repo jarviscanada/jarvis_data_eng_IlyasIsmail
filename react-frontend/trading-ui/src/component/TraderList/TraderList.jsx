@@ -4,9 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'antd/dist/antd.css'
 import './TraderList.scss'
 import { useState, useEffect } from 'react'
-import TraderListData from './TraderListData.json' 
+import TraderListData from './TraderListData.json'
 import {
-    faTrashAlt as deleteIcon
+    faTrashAlt as deleteIcon,
+    faMagnifyingGlass as viewIcon
 } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -14,11 +15,6 @@ function TraderList(props) {
 
     // Initialization of columns for table
     const columns = [
-        {
-            title: "ID",
-            dataIndex: "_id",
-            key: '_id'
-        },
         {
             title: 'First Name',
             dataIndex: 'firstName',
@@ -49,8 +45,13 @@ function TraderList(props) {
             dataIndex: 'actions',
             key: 'actions',
             render: (text, record) => (
-                <div className="trader-delete-icon">
-                    <FontAwesomeIcon icon={ deleteIcon } onClick={() => props.onTraderDeleteClick(record._id) } />
+                <div className='icons'>
+                    <div className="trader-delete-icon">
+                        <FontAwesomeIcon icon={viewIcon} onClick={() => props.onTraderViewClick(record._id)} />
+                    </div>
+                    <div className="trader-view-icon">
+                        <FontAwesomeIcon icon={deleteIcon} onClick={() => props.onTraderDeleteClick(record._id)} />
+                    </div>
                 </div>
             ),
         },
@@ -65,13 +66,13 @@ function TraderList(props) {
     })
 
 
-  return (
-   <Table
-   dataSource={props.traders}
-   columns={tableColumns}
-   pagination={false}
-   />
-  )
+    return (
+        <Table
+            dataSource={props.traders}
+            columns={tableColumns}
+            pagination={false}
+        />
+    )
 }
 
 export default TraderList
