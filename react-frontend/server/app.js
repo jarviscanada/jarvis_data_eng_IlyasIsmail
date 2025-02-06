@@ -6,9 +6,10 @@ var logger = require('morgan');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 let mongoose = require('mongoose');
+const db = require('./db');
 
 mongoose
-    .connect('mongodb://0.0.0.0:27017/traders', {
+    .connect(db.URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
@@ -24,6 +25,7 @@ mongoDB.once('open', ()=> {
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var traderRouter = require('./routes/traderRoutes');
+var quotesRouter = require('./routes/quoteRoutes');
 
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -43,6 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/traders', traderRouter);
+app.use('/quotes', quotesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

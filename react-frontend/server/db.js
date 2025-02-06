@@ -1,4 +1,4 @@
 //connecting to database
 module.exports = {
-    "URI":"mongodb://localhost:27017/trader"
+    "URI":"mongodb://0.0.0.0:27017/traders"
   };

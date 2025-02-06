@@ -169,7 +169,12 @@ function TraderAccountPage() {
                                 </div>
                             </div>
                             <div className="field">
-                            {state.trader.country}
+                                <div className="content-heading">
+                                    Country
+                                </div>
+                                <div className="content">
+                                    {state.trader.country}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -194,7 +199,7 @@ function TraderAccountPage() {
                                 </div>
                             </div>
                         </Modal>
-                        <Button onClick={showWithdrawModal}>Deposit Funds</Button>
+                        <Button onClick={showWithdrawModal}>Withdraw Funds</Button>
                         <Modal title="Withdraw Funds" okText="Submit" open={state.isWithdrawModalVisible} onOk={handleWithdrawOk} onCancel={handleWithdrawCancel}>
                             <div className="funds-form">
                                 <div className="funds-field">
