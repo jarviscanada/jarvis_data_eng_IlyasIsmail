@@ -18,15 +18,30 @@ function Dashboard(props) {
         traders: []
     })
 
-    const getTraders = async () => {
-        const response = await axios.get("http://localhost:8080/traders/traders");
+    function fixDate(date, separator) {
+        const dates = date.split(separator);
+    
+        return dates[0];
+      }
 
-        if (response) {
-            setState({
-                ...state,
-                traders: [...response.data] || []
+    const getTraders = async () => {
+        await axios.get("http://localhost:8080/traders/traders")
+        .then(response => {
+            response.data.forEach(trader => {
+                if (trader.dob != null || "") { 
+                    trader.dob = fixDate(trader.dob, "T");
+                }
             })
-        }
+
+            if (response) {
+                setState({
+                    ...state,
+                    traders: [...response.data] || []
+                })
+            }
+        })
+
+        
     }
 
     const showModal = () => {
@@ -47,7 +62,7 @@ function Dashboard(props) {
 
         try {
 
-            const response = await axios.post("http://localhost:8080/traders/trader", {firstName: state.firstName, lastName: state.lastName, email: state.email, country: state.country, dob: state.dob})
+            const response = await axios.post("http://localhost:8080/traders/trader", {firstName: state.firstName, lastName: state.lastName, email: state.email, country: state.country, dob: state.dob, amount: 0})
             .then(await getTraders());
             
 

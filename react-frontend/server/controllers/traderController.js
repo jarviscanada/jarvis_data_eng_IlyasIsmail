@@ -17,6 +17,7 @@ const getAllTradersController = async (req, res) => {
 const getTraderController = async (req, res) => {
   try {
     const trader = await Trader.findById({"_id": req.params.id});
+    console.log(trader);
     res.status(200).json(trader);
   } catch (err) {
     console.error(err);
@@ -50,7 +51,7 @@ const addTraderController = async (req, res) => {
 // update user controller
 const updateTraderController = async (req, res) => {
   try {
-    const updatedUser = await Trader.findByIdAndUpdate(
+    const updatedTrader = await Trader.findByIdAndUpdate(
       {"_id": req.params.id},
       { $set: req.body },
       { new: true }
