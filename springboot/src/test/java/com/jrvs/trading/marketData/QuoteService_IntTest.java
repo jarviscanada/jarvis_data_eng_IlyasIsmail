@@ -1,6 +1,9 @@
 package com.jrvs.trading.marketData;
 
 import com.jrvs.trading.TestConfig;
+import com.jrvs.trading.quote.Quote;
+import com.jrvs.trading.quote.QuoteDao;
+import com.jrvs.trading.quote.QuoteService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -40,7 +43,7 @@ public class QuoteService_IntTest {
     public void updateMarketData() {
         Quote quote = quoteDao.findById("IBM").get();
         Quote vantageQuote = quoteService.findQuoteByTicker("IBM");
-        Assertions.assertEquals(vantageQuote.volume, quote.volume);
+        Assertions.assertEquals(vantageQuote.getVolume(), quote.getVolume());
     }
 
     @Test
@@ -50,8 +53,8 @@ public class QuoteService_IntTest {
         tickers.add("MSFT");
         List<Quote> quotes = quoteService.saveQuotes(tickers);
         for(Quote quote : quotes) {
-            Quote dbQuote = quoteDao.findById(quote.ticker).get();
-            Assertions.assertEquals(quote.open, dbQuote.open);
+            Quote dbQuote = quoteDao.findById(quote.getTicker()).get();
+            Assertions.assertEquals(quote.getOpen(), dbQuote.getOpen());
         }
     }
 
@@ -72,9 +75,9 @@ public class QuoteService_IntTest {
         savedQuote.setPreviousClose(59);
         quoteService.saveQuote(savedQuote);
 
-        Quote quote = quoteDao.findById(savedQuote.ticker).get();
+        Quote quote = quoteDao.findById(savedQuote.getTicker()).get();
 
-        Assertions.assertEquals(savedQuote.high, quote.high);
+        Assertions.assertEquals(savedQuote.getHigh(), quote.getHigh());
     }
 
     @Test
