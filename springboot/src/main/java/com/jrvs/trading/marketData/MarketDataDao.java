@@ -2,19 +2,22 @@ package com.jrvs.trading.marketData;
 
 import java.io.IOException;
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jrvs.trading.quote.Quote;
+import com.jrvs.trading.quote.QuoteDao;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataRetrievalFailureException;
 import org.springframework.stereotype.Component;
 
@@ -23,40 +26,49 @@ public class MarketDataDao {
 
     private static final Logger logger = LoggerFactory.getLogger(MarketDataDao.class);
     private OkHttpClient client;
+    private QuoteDao quoteDao;
+
+    @Autowired
+    public MarketDataDao(QuoteDao quoteDao) {
+        this.quoteDao = quoteDao;
+    }
 
     public Optional<Quote> findById(String ticker) {
         Request request =  new Request.Builder()
-                .url("https://localhost:3000/quotes/quote/" + ticker)
+                .url("http://localhost:3000/quotes/quote/" + ticker)
                 .build();
 
         client = getHttpClient();
         Call call = client.newCall(request);
+
+        Quote quote = new Quote();
 
         try (Response response = call.execute()) {
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode jsonNode = objectMapper.readTree(response.body().string());
             response.close();
 
-            if(jsonNode.at("ticker").asText().isEmpty()) {
+            if(jsonNode.isEmpty()) {
                 throw new IllegalArgumentException("Invalid symbol or too many requests.");
             }
 
-            Quote quote = new Quote();
-            quote.setTicker(jsonNode.at("ticker").asText());
-            quote.setOpen(jsonNode.at("open").asDouble());
-            quote.setHigh(jsonNode.at("high").asDouble());
-            quote.setLow(jsonNode.at("low").asDouble());
-            quote.setPrice(jsonNode.at("price").asDouble());
-            quote.setVolume(jsonNode.at("volume").asInt());
-            quote.setLatestTradingDay(Date.valueOf(jsonNode.at("latest_trading_day").asText()));
-            quote.setPreviousClose(jsonNode.at("previous_close").asDouble());
-            quote.setChange(jsonNode.at("change").asDouble());
-            quote.setChangePercent(jsonNode.at("change_percent").asText());
+
+            quote.setTicker(jsonNode.get("ticker").asText());
+            quote.setOpen(jsonNode.get("open").asDouble());
+            quote.setHigh(jsonNode.get("high").asDouble());
+            quote.setLow(jsonNode.get("low").asDouble());
+            quote.setPrice(jsonNode.get("price").asDouble());
+            quote.setVolume(jsonNode.get("volume").asInt());
+            quote.setLatestTradingDay(Date.valueOf(jsonNode.get("latest_trading_day").asText().substring(0, 10)));
+            quote.setPreviousClose(jsonNode.get("previous_close").asDouble());
+            quote.setChange(jsonNode.get("change").asDouble());
+            quote.setChangePercent(jsonNode.get("change_percent").asText());
 
             return Optional.of(quote);
         } catch (IOException e) {
             logger.error("There was an input/output error when trying to fetch quote info from the API.", e);
         }
+
         return Optional.empty();
     }
 
@@ -89,16 +101,16 @@ public class MarketDataDao {
             if (jsonNode.isArray()) {
                 for (final JsonNode objNode : jsonNode) {
                     Quote quote = new Quote();
-                    quote.setTicker(jsonNode.at("ticker").asText());
-                    quote.setOpen(jsonNode.at("open").asDouble());
-                    quote.setHigh(jsonNode.at("high").asDouble());
-                    quote.setLow(jsonNode.at("low").asDouble());
-                    quote.setPrice(jsonNode.at("price").asDouble());
-                    quote.setVolume(jsonNode.at("volume").asInt());
-                    quote.setLatestTradingDay(Date.valueOf(jsonNode.at("latest_trading_day").asText()));
-                    quote.setPreviousClose(jsonNode.at("previous_close").asDouble());
-                    quote.setChange(jsonNode.at("change").asDouble());
-                    quote.setChangePercent(jsonNode.at("change_percent").asText());
+                    quote.setTicker(jsonNode.get("ticker").asText());
+                    quote.setOpen(jsonNode.get("open").asDouble());
+                    quote.setHigh(jsonNode.get("high").asDouble());
+                    quote.setLow(jsonNode.get("low").asDouble());
+                    quote.setPrice(jsonNode.get("price").asDouble());
+                    quote.setVolume(jsonNode.get("volume").asInt());
+                    quote.setLatestTradingDay(Date.valueOf(jsonNode.get("latest_trading_day").asText().substring(0, 10)));
+                    quote.setPreviousClose(jsonNode.get("previous_close").asDouble());
+                    quote.setChange(jsonNode.get("change").asDouble());
+                    quote.setChangePercent(jsonNode.get("change_percent").asText());
                     quotes.add(quote);
                 }
             }

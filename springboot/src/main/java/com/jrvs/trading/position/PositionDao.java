@@ -11,6 +11,7 @@ public interface PositionDao extends JpaRepository<Position, Integer> {
     List<Position> findAll();
     List<Position> findAllById(Iterable<Integer> ids);
     List<Position> findByAccountId(Integer accountId);
+    List<Position> findByAccountIdEquals(Integer accountId);
     Optional<Position> findById(Integer id);
     boolean existsById(Integer id);
     long count();

@@ -17,14 +17,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@SpringBootTest(classes = {TestConfig.class})
-@Sql({"classpath:schema.sql"})
+@SpringBootTest
 public class QuoteDao_IntTest {
 
     @Autowired
     private QuoteDao quoteDao;
 
     private Quote savedQuote;
+
 
     @BeforeEach
     public void insertOne() throws ParseException {
@@ -47,7 +47,7 @@ public class QuoteDao_IntTest {
     public void findAll() {
         List<Quote> quotes = quoteDao.findAll();
 
-        Assertions.assertEquals(savedQuote.getPrice(), quotes.getFirst().getPrice());
+        Assertions.assertEquals(savedQuote.getPrice(), quotes.get(0).getPrice());
     }
 
     @Test
@@ -56,7 +56,7 @@ public class QuoteDao_IntTest {
         tickers.add("Ticker");
         List<Quote> quotes = quoteDao.findAllById(tickers);
 
-        Assertions.assertEquals(savedQuote.getPrice(), quotes.getFirst().getPrice());
+        Assertions.assertEquals(savedQuote.getPrice(), quotes.get(0).getPrice());
     }
 
     @Test
