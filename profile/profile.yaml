@@ -13,6 +13,8 @@ skills:
   # At least 5 skills
   proficient:
     - Java/Spring Boot
+    - JavaScript
+    - TypeScript
     - Node.js
     - Express.js
     - NoSQL
@@ -61,6 +63,16 @@ jarvis_projects:
     # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
     # The project description must start with an action verb (https://bit.ly/3guO98u)
     description: Developed a web application that implemented CRUD methods for traders and pulls data from an API to show stock quote data using Node.js, Angular, and Angular Material. The trader components and service allow anybody to create a trader through a dialog box, or delete a trader through a button. Users can also edit the trader's information and add or withdraw funds from their account. It displays all traders in a dynamically updating list created through the use of observables and an Angular Material table. Users can also access a quote page, the quote service pulls stock quote data from the Alpha Vantage API through the use of HttpClient and displays it through an Angular component. Git and GitHub were used for version control using the GitFlow branching model.
+  - name: "React Trading App"
+    git_url: "/react-frontend"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Developed a web application that implemented CRUD methods for traders and pulls data from an API to show stock quote data using Node.js, React.js, Express.js, MongoDB, Ant Design, and Alpha Vantage. The application is split into two sections, the backend server and frontend UI. Using components, users can interact with the backend and have the data from the response displayed to them. Users can utilize CRUD features on traders, they can also view stock quote data listed on a separate page. Traders also have their own profile page, users can withdraw or deposit funds into a trader's account through their profile. All the data is retrieved from the backend to the frontend using axios. Git and GitHub were used for version control using the GitFlow branching model.
+  - name: "Spring Boot Trading App"
+    git_url: "/springboot"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Developed a Java Spring Boot application that allows users to view stocks, interact with traders and accounts, and simulate purchasing or selling stocks. The application uses PostgreSQL as it's database, Jackson to map the JSON to POJO, HttpClient to send http requests, JDBC and JPA to interact with the database, Spring Boot as the servlet and it's various other features, Alpha Vantage for it's stock data API, and Maven for it's dependency management. The application allows users to view stock data from Alpha Vantage as quotes and save it to a database. Users can also create their own custom quotes, they can then view it and all other quotes. If a user wants to simulate purchasing a stock, they can create a trader account. Once they create a trader account, they can directly withdraw or deposit funds into their account. Users can also delete a trader if the trader has no owned stocks/position. If a trader has enough balance in their account, they can purchase stocks through security orders. Positions can also be sold by creating a sell security order. Git and GitHub were used for version control using the GitFlow branching method.
 # List of personal or academic projects
 # Feel free to add more projects
 highlighted_projects:
