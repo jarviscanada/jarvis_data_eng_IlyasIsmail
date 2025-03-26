@@ -1,5 +1,4 @@
 # Introduction
-Discuss the design of the project. What does this project/product do? Who are the users? What are the technologies you have used? (e.g. npm, Reactjs)
 The React Trading App is a RESTful web application built using Node.js, Express.js, React.js, MongoDB, and Ant Design. The application allows users to create, view, update, and delete traders. Users can also view stock quote data in a list on a separate page. While viewing the list of traders, users can select a trader to get a more in-depth view at their account and withdraw or deposit funds into their balance. Axios was used to make calls to the back-end API, where it called upon the CRUD methods for the corresponding request. Git and GitHub were used for version control through the GitFlow branching model.
 
 # Quick Start
