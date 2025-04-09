@@ -1,5 +1,6 @@
 package com.jrvs.trading.traderAccount;
 
+import com.jrvs.trading.ResponseExceptionUtil;
 import com.jrvs.trading.account.Account;
 import com.jrvs.trading.account.AccountDao;
 import com.jrvs.trading.position.Position;
@@ -8,6 +9,7 @@ import com.jrvs.trading.securityOrder.SecurityOrderDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -84,11 +86,15 @@ public class TraderAccountService {
             throw new IllegalArgumentException("Cannot delete trader with funds in account.");
         }
 
-        List<Position> positions = positionDao.findByAccountId(account.getId());
-
-        if(!positions.isEmpty()) {
-            throw new IllegalArgumentException("Cannot delete trader with open positions.");
-        }
+//        List<Position> positions = new ArrayList<>();
+//
+//        if (positionDao.findByAccountIdEquals(account.getId()) != null) {
+//            positions = positionDao.findByAccountIdEquals(account.getId());
+//        }
+//
+//        if(!positions.isEmpty()) {
+//            throw new IllegalArgumentException("Cannot delete trader with open positions.");
+//        }
 
         securityOrderDao.deleteAllByAccountId(account.getId());
         accountDao.deleteById(account.getId());

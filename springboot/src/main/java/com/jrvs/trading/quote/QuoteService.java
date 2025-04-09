@@ -8,6 +8,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
@@ -43,7 +44,7 @@ public class QuoteService {
 
         for(Quote quote : dbQuotes) {
             Request request =  new Request.Builder()
-                    .url("https://localhost:3000/quotes/quote/" + quote.ticker)
+                    .url("http://localhost:3000/quotes/quote/" + quote.ticker)
                     .build();
 
             Call call = client.newCall(request);

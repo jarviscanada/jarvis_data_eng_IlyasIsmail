@@ -17,8 +17,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@SpringBootTest(classes = {TestConfig.class})
-@Sql({"classpath:schema.sql"})
+@SpringBootTest
 public class QuoteService_IntTest {
 
     @Autowired
