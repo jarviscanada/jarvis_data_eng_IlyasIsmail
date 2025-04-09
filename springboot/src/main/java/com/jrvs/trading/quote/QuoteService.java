@@ -1,7 +1,8 @@
-package com.jrvs.trading.marketData;
+package com.jrvs.trading.quote;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jrvs.trading.marketData.MarketDataDao;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -12,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.sql.Date;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

@@ -1,4 +1,4 @@
-package com.jrvs.trading.marketData;
+package com.jrvs.trading.quote;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

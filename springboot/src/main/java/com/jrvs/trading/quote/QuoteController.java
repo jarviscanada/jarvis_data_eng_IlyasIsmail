@@ -1,4 +1,4 @@
-package com.jrvs.trading.marketData;
+package com.jrvs.trading.quote;
 
 import com.jrvs.trading.ResponseExceptionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
 @RequestMapping("/quote")
+@Controller
 public class QuoteController {
 
     private QuoteService quoteService;

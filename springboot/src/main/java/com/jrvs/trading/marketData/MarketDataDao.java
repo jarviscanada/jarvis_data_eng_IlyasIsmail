@@ -5,10 +5,10 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import org.apache.http.util.EntityUtils;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jrvs.trading.quote.Quote;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
