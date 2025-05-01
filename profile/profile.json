@@ -61,6 +61,11 @@
       "description": "Developed a Java Spring Boot application that allows users to view stocks, interact with traders and accounts, and simulate purchasing or selling stocks. The application uses PostgreSQL as it's database, Jackson to map the JSON to POJO, HttpClient to send http requests, JDBC and JPA to interact with the database, Spring Boot as the servlet and it's various other features, Alpha Vantage for it's stock data API, and Maven for it's dependency management. The application allows users to view stock data from Alpha Vantage as quotes and save it to a database. Users can also create their own custom quotes, they can then view it and all other quotes. If a user wants to simulate purchasing a stock, they can create a trader account. Once they create a trader account, they can directly withdraw or deposit funds into their account. Users can also delete a trader if the trader has no owned stocks/position. If a trader has enough balance in their account, they can purchase stocks through security orders. Positions can also be sold by creating a sell security order. Git and GitHub were used for version control using the GitFlow branching method.",
       "git_url": "/springboot",
       "name": "Spring Boot Trading App"
+    },
+    {
+      "description": "Implemented a lightning app that utilizes multiple lightning web components and an apex controller, alongside multiple pages to access all the features. The application allows users to create, view, update, and delete bear and contact objects. Users can also view the locations of the bears on a map view based on their coordinates. There are five pages and two modals provided with the application. The home page provides a general overview of all the current bears in card format and their locations displayed on a map to the side, the bear cards can be inspected to get a more detailed profile on the bear. Users can also use the search bar to find and display specific bears based on their names. There are two pages dedicated to showing a list of all bears and contacts, users can easily create, edit, or delete records from these pages. The final two pages are the profiles of the bears and rangers, these pages provide the full details of each bear or contact. Lastly, the two modals of this application allow you to create or edit a bear or a contact object.",
+      "git_url": "",
+      "name": "Salesforce Bear-Tracking App"
     }
   ],
   "name": "Ilyas Ismail",
@@ -99,6 +104,7 @@
       "PHP"
     ],
     "proficient": [
+      "Salesforce",
       "Java/Spring Boot",
       "JavaScript",
       "TypeScript",
