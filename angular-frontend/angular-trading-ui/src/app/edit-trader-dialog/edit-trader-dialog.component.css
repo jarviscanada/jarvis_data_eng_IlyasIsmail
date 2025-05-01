@@ -1,0 +1,14 @@
+mat-form-field {
+    width: 100%;
+    padding: 12px 0px;
+    margin: 6px 0;
+    box-sizing: border-box;
+}
+
+button {
+    width: 200px;
+    padding: 16px 32px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: rgba(7, 118, 255, 0.2)
+  }

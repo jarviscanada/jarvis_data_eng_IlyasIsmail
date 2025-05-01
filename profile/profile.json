@@ -41,6 +41,31 @@
       ],
       "git_url": "/core_java",
       "name": "Core Java Apps"
+    },
+    {
+      "description": "Developed a script to detect if a string had HTML or CSS contents, displaying the content tag and the amount of times it has appeared using JavaScript and Typescript. Completed TypeScript exercises with a focus on type checking, type creation, data filtering, and utility types. Implemented a doubly linked list using TypeScript with a node object and push, pop, shift, and unshift functions to handle data for the doubly linked list. Git and GitHub were used for version control using the GitFlow branching model.",
+      "git_url": "/JavaScript_TypeScript",
+      "name": "JavaScript \u0026 TypeScript Intro"
+    },
+    {
+      "description": "Developed a web application that implemented CRUD methods for traders and pulls data from an API to show stock quote data using Node.js, Angular, and Angular Material. The trader components and service allow anybody to create a trader through a dialog box, or delete a trader through a button. Users can also edit the trader's information and add or withdraw funds from their account. It displays all traders in a dynamically updating list created through the use of observables and an Angular Material table. Users can also access a quote page, the quote service pulls stock quote data from the Alpha Vantage API through the use of HttpClient and displays it through an Angular component. Git and GitHub were used for version control using the GitFlow branching model.",
+      "git_url": "/angular-frontend",
+      "name": "Angular Trading App"
+    },
+    {
+      "description": "Developed a web application that implemented CRUD methods for traders and pulls data from an API to show stock quote data using Node.js, React.js, Express.js, MongoDB, Ant Design, and Alpha Vantage. The application is split into two sections, the backend server and frontend UI. Using components, users can interact with the backend and have the data from the response displayed to them. Users can utilize CRUD features on traders, they can also view stock quote data listed on a separate page. Traders also have their own profile page, users can withdraw or deposit funds into a trader's account through their profile. All the data is retrieved from the backend to the frontend using axios. Git and GitHub were used for version control using the GitFlow branching model.",
+      "git_url": "/react-frontend",
+      "name": "React Trading App"
+    },
+    {
+      "description": "Developed a Java Spring Boot application that allows users to view stocks, interact with traders and accounts, and simulate purchasing or selling stocks. The application uses PostgreSQL as it's database, Jackson to map the JSON to POJO, HttpClient to send http requests, JDBC and JPA to interact with the database, Spring Boot as the servlet and it's various other features, Alpha Vantage for it's stock data API, and Maven for it's dependency management. The application allows users to view stock data from Alpha Vantage as quotes and save it to a database. Users can also create their own custom quotes, they can then view it and all other quotes. If a user wants to simulate purchasing a stock, they can create a trader account. Once they create a trader account, they can directly withdraw or deposit funds into their account. Users can also delete a trader if the trader has no owned stocks/position. If a trader has enough balance in their account, they can purchase stocks through security orders. Positions can also be sold by creating a sell security order. Git and GitHub were used for version control using the GitFlow branching method.",
+      "git_url": "/springboot",
+      "name": "Spring Boot Trading App"
+    },
+    {
+      "description": "Implemented a lightning app that utilizes multiple lightning web components and an apex controller, alongside multiple pages to access all the features. The application allows users to create, view, update, and delete bear and contact objects. Users can also view the locations of the bears on a map view based on their coordinates. There are five pages and two modals provided with the application. The home page provides a general overview of all the current bears in card format and their locations displayed on a map to the side, the bear cards can be inspected to get a more detailed profile on the bear. Users can also use the search bar to find and display specific bears based on their names. There are two pages dedicated to showing a list of all bears and contacts, users can easily create, edit, or delete records from these pages. The final two pages are the profiles of the bears and rangers, these pages provide the full details of each bear or contact. Lastly, the two modals of this application allow you to create or edit a bear or a contact object.",
+      "git_url": "",
+      "name": "Salesforce Bear-Tracking App"
     }
   ],
   "name": "Ilyas Ismail",
@@ -57,7 +82,7 @@
   "professional_experience": [
     {
       "company": "Jarvis",
-      "description": "Developed programs in Java and Linux/Bash using a Docker PostgreSQL container as the database, and Git for version control. Supplied each project with a detailed documentation to help others navigate and understand each project developed. Practiced Agile methodology through daily scrum meetings, sprint planning, and sprint retrospectives to ensure the best quality of work.",
+      "description": "Developed programs in Java, JavaScript, TypeScript, Node.js, Angular, Angular Material,  and Linux/Bash using a Docker PostgreSQL container as the database. Git and GitHub was used for version control through the GitFlow branching model. Supplied each project with detailed documentation to help others navigate and understand each project developed. Practiced Agile methodology through daily scrum meetings, sprint planning, and sprint retrospectives to ensure the best quality of work.",
       "duration": "2024-present",
       "title": "Software Developer"
     }
@@ -72,19 +97,23 @@
       "Azure Data Lake"
     ],
     "familiar": [
-      "Angular",
+      "MATLAB",
       "Apigee",
       "Google Cloud Platform",
       "Jenkins",
       "PHP"
     ],
     "proficient": [
+      "Salesforce",
       "Java/Spring Boot",
+      "JavaScript",
+      "TypeScript",
       "Node.js",
       "Express.js",
       "NoSQL",
       "RDBMS/SQL",
       "React",
+      "Angular",
       "Amazon Web Services",
       "Linux/Bash",
       "Agile/Scrum",

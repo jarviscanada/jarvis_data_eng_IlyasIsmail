@@ -1,0 +1,27 @@
+<div class = "flexbox">
+    <h1>Trader Account</h1>
+    <div class = "item">
+    <mat-label>Full Name</mat-label>
+    <p>{{ trader.firstName }} {{ trader.lastName }}</p>
+    </div>
+    <div class = "item">
+      <mat-label>Email</mat-label>
+      <p>{{ trader.email }}</p>
+    </div>
+    <div class = "item">
+      <mat-label>Date of Birth</mat-label>
+      <p>{{ trader.dateOfBirth }}</p>
+    </div>
+    <div class = "item">
+      <mat-label>Country</mat-label>
+      <p>{{ trader.country }}</p>
+    </div>
+    <div class = "item">
+      <mat-label>Amount</mat-label>
+      <p>${{ trader.amount }}</p>
+    </div>
+
+    <button mat-button (click)="addFunds($event)">Deposit Funds</button>
+    <button mat-button (click)="editProfile($event)">Edit Profile</button>
+    <button mat-button (click)="removeFunds($event)">Withdraw Funds</button>
+  </div>
